@@ -15,7 +15,7 @@ onMounted(async () => {
   try {
     taskLists.value = await fetchTaskLists()
     if (taskLists.value.length > 0) {
-      currentTaskListId.value = taskLists.value[0].id
+      currentTaskListId.value = taskLists.value[0]!.id
       await loadTasks()
     }
   } catch (e) {
